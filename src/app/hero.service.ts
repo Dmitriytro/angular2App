@@ -14,11 +14,29 @@ export class HeroService {
       .then(response => response.json().data as Hero[])
       .catch(this.handleError);
   }
+  getHero(id: number): Promise<Hero>{
+    return this.getHeroes()
+      .then(heroes => heroes.find(h => h.id === id))
+
+  }
   delete(hero: Hero): Promise<any>{
     let url = `${this.heroesUrl}/${hero.id}`;
     return this.http.delete(url,{headers:this.headers})
       .toPromise()
       .then(()=> null)
+      .catch(this.handleError);
+  }
+  save(hero:Hero): Promise<any> {
+    let url = `${this.heroesUrl}/${hero.id}`;
+    return this.http.put(url,JSON.stringify(hero),{headers:this.headers})
+      .toPromise()
+      .then((hero)=>hero)
+      .catch(this.handleError);
+  }
+  create(name:string): Promise<Hero>{
+    return this.http.post(this.heroesUrl,JSON.stringify({name:name}),{headers:this.headers})
+      .toPromise()
+      .then(response => response.json().data as Hero)
       .catch(this.handleError);
   }
   private handleError(error: any): Promise<any>{

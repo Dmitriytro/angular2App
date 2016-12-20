@@ -1,5 +1,9 @@
-<h3>{{selectedHero.name}} details!</h3>
-<label>id:</label>{{selectedHero.id}}
-<label>name:</label>
-<input [(ngModel)]="selectedHero.name"/>
-<button (click)="goBack()">Back</button>
+<div *ngIf="hero">
+  <h3>{{hero.name}} details!</h3>
+  <label>id:</label>{{hero.id}}<br>
+  <label>name:</label>
+  <input [(ngModel)]="hero.name"/>
+  <button (click)="save(hero)">Save</button>
+  <button (click)="goBack()">Back</button>
+</div>
+

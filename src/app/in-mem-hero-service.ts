@@ -6,7 +6,11 @@ export class InMemHeroService implements InMemoryDbService {
       { id: 1, name: 'Windstorm' },
       { id: 2, name: 'Bombasto' },
       { id: 3, name: 'Magneta' },
-      { id: 4, name: 'Tornado' }
+      { id: 4, name: 'Tornado' },
+      { id: 5, name: 'Windstorm2' },
+      { id: 6, name: 'Bombasto2' },
+      { id: 7, name: 'Magneta2' },
+      { id: 8, name: 'Tornado2' }
     ];
     return {heroes};
   }

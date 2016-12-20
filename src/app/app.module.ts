@@ -12,6 +12,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroService } from './hero.service';
 import { InMemHeroService } from "./in-mem-hero-service";
+import './rxjs-extensions';
 
 @NgModule({
   declarations: [
